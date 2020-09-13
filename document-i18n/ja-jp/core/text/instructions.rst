@@ -57,7 +57,7 @@
 .. _text-instr-block:
 
 :ref:`構造化制御インストラクション <syntax-instr-control>` は、オプションでシンボリックな :ref:`ラベル識別子 <text-label>` を束縛できます。
-オプションで、同じラベル識別子を、それに対応する :math:`\T{end}` 偽インストラクションや :math:`\T{else}` 偽インストラクションの後で繰り返してデリミターとの一致を指示することもできます。
+オプションで、同じラベル識別子を、それに対応する :math:`\T{end}` 疑似インストラクションや :math:`\T{else}` 疑似インストラクションの後で繰り返してデリミターとの一致を指示することもできます。
 
 それらの :ref:`ブロック型 <syntax-blocktype>` は、その :ref:`関数 <text-func>` に類似した :ref:`型利用 <text-typeuse>` として与えられます。
 しかし、型利用（type use）の特殊なケースである「構文上の空文」や「単一の :ref:`result <text-result>` だけで構成される場合」は inline :ref:`関数型 <syntax-functype>` の :ref:`短縮形 <text-typeuse-abbrev>` とはみなされず、オプションの :ref:`値型 <syntax-valtype>` に直接パースされます。

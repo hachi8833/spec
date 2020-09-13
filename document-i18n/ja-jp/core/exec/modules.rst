@@ -430,7 +430,7 @@
 :ref:`モジュール <syntax-moduleinst>`
 ..................................
 
-:ref:`モジュール <syntax-module>` のアロケーション関数では、そのモジュールの the :ref:`インポート <syntax-import>` ベクタに :ref:`一致 <match-externtype>` すると仮定される適切な :ref:`外部値 <syntax-externval>` リストと、そのモジュールの :ref:`グローバル <syntax-global>` を初期化する :ref:`値 <syntax-val>` のリストをそれぞれ必要とします。
+:ref:`モジュール <syntax-module>` のアロケーション関数では、そのモジュールの :ref:`インポート <syntax-import>` ベクタに :ref:`一致 <match-externtype>` すると仮定される適切な :ref:`外部値 <syntax-externval>` リストと、そのモジュールの :ref:`グローバル <syntax-global>` を初期化する :ref:`値 <syntax-val>` のリストをそれぞれ必要とします。
 
 1. :math:`\module` を「アロケーションする :ref:`モジュール <syntax-module>`」とし、:math:`\externval_{\F{im}}^\ast` を「そのモジュールのインポートを提供する :ref:`外部値 <syntax-externval>` のベクタ」とし、:math:`\val^\ast` を「そのモジュールの :ref:`グローバル <syntax-global>` を初期化する :ref:`値 <syntax-val>`」とする。
 

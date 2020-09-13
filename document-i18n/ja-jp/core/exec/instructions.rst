@@ -4,7 +4,7 @@
 インストラクション
 ------------
 
-WebAssembly計算（computation）は、個別の :ref:`インストラクション <syntax-instr>` を実行することで動作します。
+WebAssemblyの計算（computation）は、個別の :ref:`インストラクション <syntax-instr>` を実行することで動作します。
 
 .. index:: numeric instruction, determinism, trap, NaN, value, value type
    pair: execution; instruction
@@ -552,7 +552,7 @@ WebAssembly計算（computation）は、個別の :ref:`インストラクショ
 
 6. :math:`\X{sz}` を、:math:`\X{mem}.\MIDATA` を :ref:`ページサイズ <page-size>` で割った長さとする。
 
-7. Push the value :math:`\I32.\CONST~\X{sz}` to the stack.
+7. 値 :math:`\I32.\CONST~\X{sz}` をスタックにpushする。
 
 .. math::
    \begin{array}{l}
@@ -982,10 +982,10 @@ WebAssembly計算（computation）は、個別の :ref:`インストラクショ
 
 .. _exec-instr-seq-exit:
 
-ラベル :math:`L` を持つ :math:`\instr^\ast` からexitする
+ラベル :math:`L` を持つ :math:`\instr^\ast` をexitする
 ................................................
 
-ジャンプやトラップによるabortなしでブロックの終了部に到達した場合、以下の手順が実行されます。
+ジャンプやトラップによるabort（中断）なしでブロックの終了部に到達した場合、以下の手順が実行されます。
 
 1. :math:`m` をスタックのトップにある値の個数とする。
 
@@ -1006,9 +1006,8 @@ WebAssembly計算（computation）は、個別の :ref:`インストラクショ
    \end{array}
 
 .. note::
-   This semantics also applies to the instruction sequence contained in a |LOOP| instruction.
-   Therefore, execution of a loop falls off the end, unless a backwards branch is performed explicitly.
-
+   このセマンティクスは、|LOOP| インストラクションを含むインストラクションシーケンスにも適用されます。
+   したがって、あるループの実行は、明示的に後方分岐しない限り終端に達しません。
 
 .. index:: ! call, function, function instance, label, frame
 
@@ -1129,7 +1128,7 @@ WebAssembly計算（computation）は、個別の :ref:`インストラクショ
    \end{array}
 
 上の :math:`\X{hf}(S; \val^n)` は、引数 :math:`\val^n` を持つ現在のストア :math:`S` にあるホスト関数 :math:`\X{hf}` の、実装側で定義された実行を表します。
-これはさまざまな結果を生み出しますが、その結果の個別の要素は、変更されたストア :math:`S'` とその :ref:`結果 <syntax-result>` のペアか、乖離を表す特殊値 :math:`\bot` のいずれかとなります。
+これはさまざまな結果を生み出しますが、その結果の個別の要素は、変更されたストア :math:`S'` とその :ref:`結果 <syntax-result>` のペアか、乖離（divergence）を表す特殊値 :math:`\bot` のいずれかとなります。
 1つのホスト関数は、少なくとも1つの引数に対応する結果が複数ある場合は非決定的となります。
 
 WebAssemblyの実装をホスト関数の存在において :ref:`健全 <soundness>` であるためには、あらゆる :ref:`ホスト関数インスタンス <syntax-funcinst>` が :ref:`有効 <valid-hostfuncinst>` でなければなりません。ここで言う有効とは、適切な事前条件と事後条件に従うということです。すなわち、:ref:`有効なストア <valid-store>` :math:`S` のもとで、与えられた引数 :math:`\val^n` が対応するパラメータ型 :math:`t_1^n` と一致し、ホスト関数の実行が「空でない可能な結果」を生み出さなければならず、その結果が「乖離」または「有効なストア :math:`S'` で構成されている（すなわち :math:`S` の :ref:`拡張 <extend-store>` である）」のいずれかであること、そして結果が戻り値の型 :math:`t_2^m` に一致することです。

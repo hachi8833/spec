@@ -595,7 +595,7 @@
 
 .. note::
    第1条件は、開始関数が最大1個までとなるようにします。
-   第2条件は、すべての :ref:`インポート <text-import>` が通常の「:ref:`function <text-func>`」「:ref:`table <text-table>`」「:ref:`memory <text-mem>`」「:ref:`global <text-global>`」の定義より前に出現しなければならないよう強制し、それによってそれぞれの :ref:`インデックス空間 <syntax-index>` を維持します。
+   第2条件は、すべての :ref:`インポート <text-import>` が通常の「:ref:`関数 <text-func>`」「:ref:`テーブル <text-table>`」「:ref:`メモリー <text-mem>`」「:ref:`グローバル <text-global>`」の定義より前に出現しなければならないよう強制し、それによってそれぞれの :ref:`インデックス空間 <syntax-index>` を維持します。
 
    |Tmodule| の文法内における :math:`I` の :ref:`整形式性 <text-context-wf>` 条件は、名前空間内の識別子が重複しないようにするものです。
 

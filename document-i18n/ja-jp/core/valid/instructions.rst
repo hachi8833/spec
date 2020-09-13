@@ -46,7 +46,7 @@
    .. math::
       \UNREACHABLE~~\I32.\ADD
 
-   それと対象的に、以下は無効となります。
+   それと対照的に、以下は無効となります。
 
    .. math::
       \UNREACHABLE~~(\I64.\CONST~0)~~\I32.\ADD

@@ -7,7 +7,7 @@
 WebAssemblyの :ref:`型システム <type-system>` は「健全（sound）」です。すなわちWebAssemblyセマンティクスにおいて「型安全性（type safety）」および「メモリ安全性（memory safety）」であることが暗に示されます。以下に例を示します。
 
 * 宣言されたあらゆる型、および検証フェーズで派生した型は、実行時に尊重されます。
-  例:「あらゆる個別の :ref:`ローカル <syntax-local>` 変数や :ref:`グローバル <syntax-global>` 変数は正しい型の値だけを含む」「あらゆる個別の :ref:`インストラクション <syntax-instr>` は期待された型を持つオペランドに対してのみ適用される」「あらゆる個別の :ref:`関数 <syntax-func>` :ref:`呼び出し <exec-invocation>` は、正しい型の結果を常に評価する（:ref:`トラップ <trap>` または分岐しない場合）」
+  例:「あらゆる個別の :ref:`ローカル <syntax-local>` 変数や :ref:`グローバル <syntax-global>` 変数は正しい型の値だけを含む」「あらゆる個別の :ref:`インストラクション <syntax-instr>` は期待された型を持つオペランドに対してのみ適用される」「あらゆる個別の :ref:`関数 <syntax-func>` :ref:`呼び出し <exec-invocation>` は、正しい型の結果を常に評価する（:ref:`トラップ <trap>` または乖離（diverge）しない場合）」
 
 * プログラムで明示的に定義されない限り、いかなるメモリー位置に対する読み書きも行われない。
   例:「:ref:`ローカル <syntax-local>`」「:ref:`グローバル <syntax-global`」「:ref:`テーブル <syntax-table>` の要素」または「線形 :ref:`メモリー <syntax-mem>` 内の位置」
@@ -165,7 +165,7 @@ WebAssemblyの :ref:`検証 <valid>` を定義する型付けルールは、WebA
 
   * その結果セットの個別の要素 :math:`R` について以下のいずれかが成立しなければならない。
 
-    * :math:`R` が :math:`\bot` である（すなわち分岐（divergence））。
+    * :math:`R` が :math:`\bot` である（すなわち乖離（divergence））。
 
     * :math:`R` は、:math:`S_1` を :ref:`拡張する <extend-store>` :ref:`有効 <valid-store>` な :ref:`ストア <syntax-store>` :math:`S_2`、およびその :ref:`型 <valid-result>` が :math:`[t_2^\ast]` と一致する :ref:`結果 <syntax-result>` :math:`\result` で構成される。
 
@@ -714,7 +714,7 @@ WebAssembly :ref:`型システム <valid>` をその :ref:`実行セマンティ
 
 保存定理とプログレス定理から、WebAssembly型システムの健全性が直接導かれる。
 
-**系（健全性）**: :ref:`設定 <syntax-config>` :math:`S;T` が :ref:`有効 <valid-config>` な場合（すなわちいくつかの :ref:`結果型 <syntax-resulttype>` :math:`[t^\ast]` で :math:`\vdashconfig S';T' : [t^\ast]` となる）、分岐（diverge）するか有限のステップ数で終端設定 :math:`S';T'` に達する（すなわち :math:`S;T \stepto^\ast S';T'`）。これは同じ結果型（すなわち :math:`\vdashconfig S';T' : [t^\ast]`）で有効であり、ただし :math:`S'` は :math:`S` の :ref:`拡張 <extend-store>` （すなわち :math:`\vdashstoreextends S \extendsto S'`）である。
+**系（健全性）**: :ref:`設定 <syntax-config>` :math:`S;T` が :ref:`有効 <valid-config>` な場合（すなわちいくつかの :ref:`結果型 <syntax-resulttype>` :math:`[t^\ast]` で :math:`\vdashconfig S';T' : [t^\ast]` となる）、乖離（diverge）するか有限のステップ数で終端設定 :math:`S';T'` に達する（すなわち :math:`S;T \stepto^\ast S';T'`）。これは同じ結果型（すなわち :math:`\vdashconfig S';T' : [t^\ast]`）で有効であり、ただし :math:`S'` は :math:`S` の :ref:`拡張 <extend-store>` （すなわち :math:`\vdashstoreextends S \extendsto S'`）である。
 
 言い換えると、有効な設定内にある個別のスレッドはどれも、「永遠に実行続ける」「トラップする」「期待される型を持つ結果で終了する」のいずれかにしかなりません。
 その結果、:ref:`有効なストア <valid-store>` が与えられた場合に、有効なモジュールの :ref:`インスタンス化 <exec-instantiation>` や :ref:`呼び出し <exec-invocation>` で定義される計算がクラッシュすることもなければ、本仕様で与えられる :ref:`実行 <exec>` セマンティクスでカバーできない形で振る舞いがおかしくなることもありません。

@@ -4,7 +4,7 @@
 ランタイム構造
 -----------------
 
-WebAssemblyの抽象マシンを形成する :ref:`Store <store>` や :ref:`stack <stack>` といった「ランタイム構造」（:ref:`値 <syntax-val>` や :ref:`モジュールインスタンス <syntax-moduleinst>` など）は、追加の補助構文として精密にできています。
+WebAssemblyの抽象マシンを形成する :ref:`ストア <store>` や :ref:`スタック <stack>` といった「ランタイム構造」（:ref:`値 <syntax-val>` や :ref:`モジュールインスタンス <syntax-moduleinst>` など）は、追加の補助構文として精密にできています。
 
 .. index:: ! value, constant, value type, integer, floating-point
    pair: abstract syntax; value
