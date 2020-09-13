@@ -31,9 +31,9 @@
 :ref:`データセグメント <valid-data>`                           :math:`C \vdashdata \data \ok`
 :ref:`開始関数 <valid-start>`                                :math:`C \vdashstart \start \ok`
 :ref:`エクスポート <valid-export>`                            :math:`C \vdashexport \export : \externtype`
-:ref:`エクスポートの記述 <valid-exportdesc>`                   :math:`C \vdashexportdesc \exportdesc : \externtype`
+:ref:`エクスポートのデスクリプション <valid-exportdesc>`                   :math:`C \vdashexportdesc \exportdesc : \externtype`
 :ref:`インポート <valid-import>`                              :math:`C \vdashimport \import : \externtype`
-:ref:`インポートの記述 <valid-importdesc>`                     :math:`C \vdashimportdesc \importdesc : \externtype`
+:ref:`インポートのデスクリプション <valid-importdesc>`                     :math:`C \vdashimportdesc \importdesc : \externtype`
 :ref:`モジュール <valid-module>`                              :math:`\vdashmodule \module : \externtype^\ast \to \externtype^\ast`
 =========================================================  ===============================================================================
 

@@ -10,7 +10,7 @@ WebAssemblyの :ref:`型システム <type-system>` は「健全（sound）」�
   例:「あらゆる個別の :ref:`ローカル <syntax-local>` 変数や :ref:`グローバル <syntax-global>` 変数は正しい型の値だけを含む」「あらゆる個別の :ref:`インストラクション <syntax-instr>` は期待された型を持つオペランドに対してのみ適用される」「あらゆる個別の :ref:`関数 <syntax-func>` :ref:`呼び出し <exec-invocation>` は、正しい型の結果を常に評価する（:ref:`トラップ <trap>` または乖離（diverge）しない場合）」
 
 * プログラムで明示的に定義されない限り、いかなるメモリー位置に対する読み書きも行われない。
-  例:「:ref:`ローカル <syntax-local>`」「:ref:`グローバル <syntax-global`」「:ref:`テーブル <syntax-table>` の要素」または「線形 :ref:`メモリー <syntax-mem>` 内の位置」
+  例:「:ref:`ローカル <syntax-local>`」「:ref:`グローバル <syntax-global>`」「:ref:`テーブル <syntax-table>` の要素」または「線形 :ref:`メモリー <syntax-mem>` 内の位置」
 
 * 未定義の動作が存在しない。
   すなわち、:ref:`実行ルール <exec>` は、:ref:`有効な <valid>` プログラム内で発生する可能性のあるあらゆるケースをカバーし、かつそれらのルールが相互一貫する。
