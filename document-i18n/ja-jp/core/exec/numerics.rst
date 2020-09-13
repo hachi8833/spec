@@ -1587,7 +1587,7 @@ NaNの伝搬（NaN propagation）
 
 .. math::
    \begin{array}{lll@{\qquad}l}
-   \convertu_{M,N}(i) &=& \ieee_N(\signed_M(i)) \\
+   \converts_{M,N}(i) &=& \ieee_N(\signed_M(i)) \\
    \end{array}
 
 
