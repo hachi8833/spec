@@ -257,7 +257,7 @@ WebAssemblyの実装は「ホスト」環境に「埋め込まれる」のが典
 :math:`\F{func\_alloc}(\store, \functype, \hostfunc) : (\store, \funcaddr)`
 ...........................................................................
 
-1. 事前条件: :math:`\functype` が :math:`valid <valid-functype>` であること。
+1. 事前条件: :math:`\functype` が :ref:`有効 <valid-functype>` であること。
 
 2. :math:`\funcaddr` を、:math:`\store` 内に「:ref:`関数型 <syntax-functype>` :math:`\functype` とホスト関数コード :math:`\hostfunc`」という :ref:`ホスト関数をアロケーションした <alloc-func>` 結果とする。
 
@@ -326,7 +326,7 @@ WebAssemblyの実装は「ホスト」環境に「埋め込まれる」のが典
 :math:`\F{table\_alloc}(\store, \tabletype) : (\store, \tableaddr)`
 ...................................................................
 
-1. 事前条件: :math:`\tabletype` が :math:`valid <valid-tabletype>` であること。
+1. 事前条件: :math:`\tabletype` が :ref:`有効 <valid-tabletype>` であること。
 
 2. :math:`\tableaddr` を、:math:`\store` 内に :ref:`テーブル型 <syntax-tabletype>` :math:`\tabletype` の :ref:`テーブルをアロケーションした <alloc-table>` 結果とする。
 
@@ -347,7 +347,7 @@ WebAssemblyの実装は「ホスト」環境に「埋め込まれる」のが典
 
 2. :math:`\tabletype` を返す。
 
-3. 事後条件: :math:`\tabletype` が :math:`valid <valid-tabletype>` であること。
+3. 事後条件: :math:`\tabletype` が :ref:`有効 <valid-tabletype>` であること。
 
 .. math::
    \begin{array}{lclll}
@@ -440,7 +440,7 @@ WebAssemblyの実装は「ホスト」環境に「埋め込まれる」のが典
 :math:`\F{mem\_alloc}(\store, \memtype) : (\store, \memaddr)`
 ................................................................
 
-1. 事前条件: :math:`\memtype` は :math:`valid <valid-memtype>` であること。
+1. 事前条件: :math:`\memtype` は :ref:`有効 <valid-memtype>` であること。
 
 2. :math:`\memaddr` を、:math:`\store` 内に :ref:`メモリー型 <syntax-memtype>` :math:`\memtype` で :ref:`メモリーをアロケーションした <alloc-mem>` 結果とする。
 
@@ -461,7 +461,7 @@ WebAssemblyの実装は「ホスト」環境に「埋め込まれる」のが典
 
 2. :math:`\memtype` を返す。
 
-3. 事後条件: :math:`\memtype` は :math:`valid <valid-memtype>` であること。
+3. 事後条件: :math:`\memtype` は :ref:`有効 <valid-memtype>` であること。
 
 .. math::
    \begin{array}{lclll}
@@ -555,7 +555,7 @@ WebAssemblyの実装は「ホスト」環境に「埋め込まれる」のが典
 :math:`\F{global\_alloc}(\store, \globaltype, \val) : (\store, \globaladdr)`
 ............................................................................
 
-1. 事前条件: :math:`\globaltype` は :math:`valid <valid-globaltype>` であること。
+1. 事前条件: :math:`\globaltype` は :ref:`有効 <valid-globaltype>` であること。
 
 2. :math:`\globaladdr` を、:math:`\store` 内で :ref:`グローバル型 <syntax-globaltype>` と初期値 :math:`\val` で :ref:`アロケーション <alloc-global>` した結果とする。
 
@@ -576,7 +576,7 @@ WebAssemblyの実装は「ホスト」環境に「埋め込まれる」のが典
 
 2. :math:`\globaltype` を返す。
 
-3. 事後条件: :math:`\globaltype` が :math:`valid <valid-globaltype>` であること。
+3. 事後条件: :math:`\globaltype` が :ref:`有効 <valid-globaltype>` であること。
 
 .. math::
    \begin{array}{lclll}
